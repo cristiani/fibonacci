@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "49785b92-bbdd-4b75-9cac-6f64e950af24",
+		"name": "Fibonacci",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fibonacci classic recursive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fibonacci?seed=30&version=classic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fibonacci"
+					],
+					"query": [
+						{
+							"key": "seed",
+							"value": "30"
+						},
+						{
+							"key": "version",
+							"value": "classic"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fibonacci classic recursive with cache",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fibonacci?seed=50000&version=cache",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fibonacci"
+					],
+					"query": [
+						{
+							"key": "seed",
+							"value": "50000"
+						},
+						{
+							"key": "version",
+							"value": "cache"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fibonacci without recursion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fibonacci?seed=100000&version=iterative",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fibonacci"
+					],
+					"query": [
+						{
+							"key": "seed",
+							"value": "100000"
+						},
+						{
+							"key": "version",
+							"value": "iterative"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fibonacci without and without BigInteger",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fibonacci?seed=100000&version=iterative-string",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fibonacci"
+					],
+					"query": [
+						{
+							"key": "seed",
+							"value": "100000"
+						},
+						{
+							"key": "version",
+							"value": "iterative-string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fibonacci concurrent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fibonacci?seed=100000&version=concurrent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fibonacci"
+					],
+					"query": [
+						{
+							"key": "seed",
+							"value": "100000"
+						},
+						{
+							"key": "version",
+							"value": "concurrent"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fibonacci Swagger docs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v3/api-docs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v3",
+						"api-docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fibonacci Swagger UI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swagger-ui",
+						"index.html"
+					],
+					"query": [
+						{
+							"key": "configUrl",
+							"value": "/v3/api-docs/swagger-config"
+						}
+					],
+					"hash": "/"
+				}
+			},
+			"response": []
+		}
+	]
+}

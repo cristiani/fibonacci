@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fibonacci
+  labels:
+    app: fibonacci
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fibonacci
+  template:
+    metadata:
+      labels:
+        app: fibonacci
+    spec:
+      containers:
+        - name: fibonacci
+          image: spring-fibonacci-test:latest
+          imagePullPolicy: Never
+          ports:
+          - containerPort: 8080
+            name: api-port
+          livenessProbe: # (failure kills and restarts container)
+            httpGet:
+              port: api-port
+              path: /api/fibonacci?seed=1&version=classic
+            initialDelaySeconds: 60
+            timeoutSeconds: 15
+            failureThreshold: 3
+            periodSeconds: 30
+          readinessProbe: # (failure suspends traffic until success)
+            httpGet:
+              port: api-port
+              path: /api/fibonacci?seed=1&version=classic
+            initialDelaySeconds: 60
+            timeoutSeconds: 15
+            failureThreshold: 3
+            successThreshold: 1
+            periodSeconds: 60
+          resources:
+            requests:
+              cpu: 2
+              memory: 1Gi
+            limits:
+              cpu: 2
+              memory: 1Gi
