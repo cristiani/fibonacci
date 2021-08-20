@@ -1,7 +1,7 @@
 Fibonacci Test.
 
 This springboot application was developed with  Intellij Community Edition.
-The project structure if the one recommended in [Spring docs](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.structuring-your-code).
+The project structure is the one recommended in [Spring docs](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.structuring-your-code).
 To execute this service locally, you need access to build and run either via
  maven executing: 
 ```
